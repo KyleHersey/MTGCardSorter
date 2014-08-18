@@ -287,6 +287,17 @@ public class XMLParser {
 			
 			returnCard.setText(text);
 			
+			//get loyalty-----------------------------------------------------------
+			if(isPlaneswalker){
+				String loyalty = scan.next();
+				Scanner scanLoyalty = new Scanner(loyalty);
+				scanLoyalty.findInLine("<loyalty>");
+				loyalty = scanLoyalty.nextLine();
+				loyalty = loyalty.substring(0, loyalty.length() - 10);
+				
+				returnCard = new Planeswalker(returnCard);
+				((Planeswalker) returnCard).setLoyalty(Integer.parseInt(loyalty));
+			}
 			
 			
 		return returnCard;
