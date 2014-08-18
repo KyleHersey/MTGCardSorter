@@ -1,0 +1,12 @@
+In XML parser, the while loop to get to the cards section could cause an infinite loop 
+if the XML file is not formatted correctly.
+
+Need support for odd characters
+Need Support for split cards
+
+Dark Depths is a legend and a snow permanent, so it has two supertypes. I have
+decided that legend takes priority over snow for searching purposes.
+(it will not register as a snow permanent [if you were fool enough to search by that])
+
+Garbage cards in XML, such as vanguard and soldier tokens will have the name of "RemoveMe"
+And will be dealt with when finishing the list of cards
